@@ -21,5 +21,24 @@ model User {
 
   isAdmin Boolean @default(false)
 
+  recipes Recipe[]
+
   @@map("users")
+}
+
+model Recipe {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title       String
+  description String
+  ingredients String
+  directions  String
+  imageUrl    String
+
+  authorId Int
+  author   User @relation(fields: [authorId], references: [id])
+
+  @@map("recipes")
 }
