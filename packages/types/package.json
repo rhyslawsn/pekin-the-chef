@@ -1,5 +1,5 @@
 {
-  "name": "@recipe-to-grocery/types",
+  "name": "@recipe-wiki/types",
   "exports": {
     ".": "./src/index.ts"
   },
@@ -7,7 +7,7 @@
   "types": "src/index.ts",
   "version": "1.0.0",
   "description": "Share utils library for Recipe To Grocery apps",
-  "repository": "https://github.com/rhyslawsn/recipe-to-grocery/",
+  "repository": "https://github.com/rhyslawsn/recipe-wiki/",
   "license": "UNLICENSED",
   "private": true,
   "devDependencies": {

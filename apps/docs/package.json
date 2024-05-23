@@ -1,5 +1,5 @@
 {
-  "name": "@recipe-to-grocery/docs",
+  "name": "@recipe-wiki/docs",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,11 +10,11 @@
     "lint": "eslint \"src/**/*.ts\""
   },
   "dependencies": {
-    "@recipe-to-grocery/ui": "*"
+    "@recipe-wiki/ui": "*"
   },
   "devDependencies": {
-    "@recipe-to-grocery/eslint-config": "*",
-    "@recipe-to-grocery/typescript-config": "*",
+    "@recipe-wiki/eslint-config": "*",
+    "@recipe-wiki/typescript-config": "*",
     "eslint": "^8.57.0",
     "typescript": "^5.3.3",
     "vite": "^5.1.4"

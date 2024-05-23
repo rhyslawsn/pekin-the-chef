@@ -2,7 +2,7 @@
 module.exports = {
   root: true,
   ignorePatterns: [".eslintrc.cjs"],
-  extends: ["@recipe-to-grocery/eslint-config/index.js"],
+  extends: ["@recipe-wiki/eslint-config/index.js"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     project: true,

@@ -1,5 +1,5 @@
 {
-  "name": "@recipe-to-grocery/eslint-config",
+  "name": "@recipe-wiki/eslint-config",
   "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",

@@ -2,12 +2,12 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
-    "dev": "turbo dev --filter=!@recipe-to-grocery/docs",
+    "dev": "turbo dev --filter=!@recipe-wiki/docs",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@recipe-to-grocery/eslint-config": "*",
+    "@recipe-wiki/eslint-config": "*",
     "sort-package-json": "2.10.0",
     "prettier": "3.2.5",
     "turbo": "latest"

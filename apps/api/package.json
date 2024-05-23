@@ -1,8 +1,8 @@
 {
-  "name": "@recipe-to-grocery/api",
+  "name": "@recipe-wiki/api",
   "version": "1.0.0",
   "private": true,
-  "description": "API for recipe-to-grocery",
+  "description": "API for recipe-wiki",
   "type": "commonjs",
   "exports": {
     ".": "./src/main.ts"

@@ -1,5 +1,5 @@
 {
-  "extends": "@recipe-to-grocery/typescript-config/base.json",
+  "extends": "@recipe-wiki/typescript-config/base.json",
   "include": ["."],
   "exclude": ["node_modules"]
 }

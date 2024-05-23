@@ -1,4 +1,4 @@
-import { ENVS } from "@recipe-to-grocery/types";
+import { ENVS } from "@recipe-wiki/types";
 
 const rawAppEnv = import.meta.env.VITE_APP_ENV;
 

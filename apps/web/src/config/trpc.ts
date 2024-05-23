@@ -1,4 +1,4 @@
-import { WebRouter } from "@recipe-to-grocery/api";
+import { WebRouter } from "@recipe-wiki/api";
 import { createTRPCReact } from "@trpc/react-query";
 import { inferRouterInputs, inferRouterOutputs } from "@trpc/server";
 

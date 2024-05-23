@@ -18,9 +18,9 @@ This Turborepo includes the following packages and apps:
 
 - `docs`: a vanilla [vite](https://vitejs.dev) ts app
 - `web`: another vanilla [vite](https://vitejs.dev) ts app
-- `@recipe-to-grocery/ui`: a stub component & utility library shared by both `web` and `docs` applications
-- `@recipe-to-grocery/eslint-config`: shared `eslint` configurations
-- `@recipe-to-grocery/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- `@recipe-wiki/ui`: a stub component & utility library shared by both `web` and `docs` applications
+- `@recipe-wiki/eslint-config`: shared `eslint` configurations
+- `@recipe-wiki/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 

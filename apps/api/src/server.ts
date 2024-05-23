@@ -23,7 +23,7 @@ const corsOptions = {
     // Ignore ports
     origin = origin.replace(/:[0-9]+$/, "");
 
-    if (origin.endsWith(".recipe-to-grocery.com")) {
+    if (origin.endsWith(".recipe-wiki.com")) {
       callback(null, true);
     } else {
       callback(null, false);

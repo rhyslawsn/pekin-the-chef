@@ -1,5 +1,5 @@
 {
-  "name": "@recipe-to-grocery/ui",
+  "name": "@recipe-wiki/ui",
   "version": "0.0.0",
   "exports": {
     "./counter": "./components/counter.ts",
@@ -11,8 +11,8 @@
     "lint": "eslint \"**/*.ts\""
   },
   "devDependencies": {
-    "@recipe-to-grocery/eslint-config": "*",
-    "@recipe-to-grocery/typescript-config": "*",
+    "@recipe-wiki/eslint-config": "*",
+    "@recipe-wiki/typescript-config": "*",
     "typescript": "5.4.5"
   }
 }
