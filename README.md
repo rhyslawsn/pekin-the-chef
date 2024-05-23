@@ -1,4 +1,4 @@
-# React Chakra-UI Prisma Trpc Boilerplate
+# Recipe Wiki 🍜
 
 This is an official starter Turborepo.
 
