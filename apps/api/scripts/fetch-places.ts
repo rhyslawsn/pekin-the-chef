@@ -42,8 +42,6 @@ const fetchSitemap = async (url) => {
         (sitemapEntry) => sitemapEntry.loc
       );
 
-      console.log("Found sitemap index, fetching sitemaps:", sitemapUrls);
-
       const sitemapPromises = sitemapUrls.flatMap(fetchSitemap);
       const sitemaps = await Promise.all(sitemapPromises);
       return sitemaps.flat();
@@ -62,8 +60,6 @@ const fetchMenuUrls = async (url) => {
 
     const urls = await fetchSitemap(`${baseUrl}/sitemap.xml`);
     const menuUrls = urls.filter((url) => doesUrlIncludeMenuKeyword(url));
-
-    console.log("Found menu URLs:", menuUrls);
 
     return menuUrls;
   } catch (error) {
