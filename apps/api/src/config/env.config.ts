@@ -20,6 +20,7 @@ const envVariables = z.object({
   SUPABASE_API_KEY: z.string(),
   SUPABASE_URL: z.string(),
   VISITOR_SECRET: z.string(),
+  GOOGLE_MAPS_API_KEY: z.string(),
 });
 
 export const ENV = envVariables.parse(process.env);
@@ -28,10 +29,4 @@ if (ENV.DATABASE_URL.indexOf("pool_timeout=0") === -1) {
   console.warn(
     "\x1b[31mPool timeout not set to 0 on the Postgres connection string - Importing rates will cause issues\x1b[0m"
   );
-}
-
-declare global {
-  namespace NodeJS {
-    interface ProcessEnv extends z.infer<typeof envVariables> {}
-  }
 }
