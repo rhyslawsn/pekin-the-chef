@@ -1,4 +1,5 @@
 import axios from "axios";
+import https from "https";
 import { writeFileSync } from "fs";
 import { config } from "dotenv";
 import xml2js from "xml2js";
@@ -11,9 +12,12 @@ const MENU_KEYWORDS = [
   "lunch",
   "breakfast",
   "drink",
-  "happy",
   "features",
 ];
+
+const agent = new https.Agent({
+  rejectUnauthorized: false,
+});
 
 const doesUrlIncludeMenuKeyword = (url) =>
   MENU_KEYWORDS.some((keyword) => url.includes(keyword));
@@ -57,8 +61,15 @@ const fetchSitemap = async (url) => {
 const fetchMenuUrls = async (url) => {
   try {
     const baseUrl = getBaseUrl(url);
-
-    const urls = await fetchSitemap(`${baseUrl}/sitemap.xml`);
+    const response = await axios.get(`${baseUrl}/robots.txt`, {
+      headers: {
+        "User-Agent": "*",
+      },
+      httpsAgent: agent,
+    });
+    const sitemapUrl =
+      response.data.match(/sitemap: (.*)/i)?.[1] || `${baseUrl}/sitemap.xml`;
+    const urls = await fetchSitemap(sitemapUrl);
     const menuUrls = urls.filter((url) => doesUrlIncludeMenuKeyword(url));
 
     return menuUrls;
@@ -105,4 +116,4 @@ const url = "https://maps.googleapis.com/maps/api/place/textsearch/json";
 const keywords = ["restaurants", "Victoria, BC"];
 
 fetchDataFromGoogleMaps(url, keywords);
-// fetchMenuUrls("https://10acres.ca/");
+// fetchMenuUrls("https://www.earls.ca/");
