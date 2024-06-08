@@ -4,7 +4,7 @@ import ws from "ws";
 
 import { prisma } from "./config/prisma.config";
 import { createContext } from "./context";
-import { WebRouter, webRouter } from "./procedures/web";
+import { Router, router } from "./procedures/web";
 import { app } from "./server";
 
 const port = process.env.PORT ?? 3000;
@@ -16,7 +16,7 @@ const server = app.listen(Number(port), () =>
 app.use(
   "/v1/trpc",
   trpcExpress.createExpressMiddleware({
-    router: webRouter,
+    router,
     createContext,
   })
 );
@@ -25,9 +25,9 @@ const wssWeb = new ws.Server({
   noServer: true,
 });
 
-const handlerWeb = applyWSSHandler<WebRouter>({
+const handlerWeb = applyWSSHandler<Router>({
   wss: wssWeb,
-  router: webRouter,
+  router,
   createContext,
 });
 
@@ -68,4 +68,4 @@ const gracefulShutdown = async () => {
 process.on("SIGTERM", gracefulShutdown);
 process.on("SIGINT", gracefulShutdown);
 
-export type { WebRouter };
+export type { Router };

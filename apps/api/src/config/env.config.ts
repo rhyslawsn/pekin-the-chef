@@ -4,6 +4,11 @@ import { z } from "zod";
 config();
 
 type ENVS = "dev" | "stg" | "prd";
+enum ENVS_ENUM {
+  dev = "dev",
+  stg = "stg",
+  prd = "prd",
+}
 
 const rawAppEnv = process.env.APP_ENV;
 
@@ -12,7 +17,7 @@ if (rawAppEnv && !rawAppEnv.includes(rawAppEnv as ENVS)) {
 }
 
 const envVariables = z.object({
-  APP_ENV: z.string(),
+  APP_ENV: z.nativeEnum(ENVS_ENUM),
   DATABASE_URL: z.string(),
   FRONTEND_URL: z.string(),
   PORT: z.string(),

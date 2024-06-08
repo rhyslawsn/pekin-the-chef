@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { procedure } from "../../../trpc";
+import { procedure } from "../../../procedure";
 import { TRPCError } from "@trpc/server";
 import { prisma } from "../../../config/prisma.config";
 

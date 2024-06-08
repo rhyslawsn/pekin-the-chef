@@ -10,37 +10,14 @@ import {
 } from "@chakra-ui/react";
 import { Page } from "../components/Page";
 import { Link } from "react-router-dom";
+import { TrpcOutputs, trpc } from "../config/trpc";
 
-type Result = {
-  id: number;
-  image: string;
-  name: string;
-  description: string;
-};
-
-const RECIPES: Result[] = [
-  {
-    id: 1,
-    image: "https://bit.ly/2Z4KKcF",
-    name: "Omelette",
-    description: "A delicious omelette.",
-  },
-  {
-    id: 2,
-    image: "https://bit.ly/3A4eZ0M",
-    name: "Pancakes",
-    description: "A stack of delicious pancakes.",
-  },
-  {
-    id: 3,
-    image: "https://bit.ly/3kz9YfM",
-    name: "Scrambled Eggs",
-    description: "Perfectly scrambled eggs.",
-  },
-];
+type Recipe = TrpcOutputs["getRecipe"];
 
 export const Home = () => {
-  const renderResult = (result: Result) => {
+  const { data: recipes } = trpc.getRecipes.useQuery();
+
+  const renderResult = (result: Recipe) => {
     return (
       <Stack
         direction="column"
@@ -52,10 +29,14 @@ export const Home = () => {
         to={`/recipes/${result.id}`}
       >
         <AspectRatio ratio={4 / 3} w="200px">
-          <Image src={result.image} alt={result.name} borderTopRadius="md" />
+          <Image
+            src={result.imageUrls[0]}
+            alt={result.title}
+            borderTopRadius="md"
+          />
         </AspectRatio>
         <Stack m="2">
-          <Heading size="md">{result.name}</Heading>
+          <Heading size="md">{result.title}</Heading>
           <Text>{result.description}</Text>
         </Stack>
       </Stack>
@@ -74,7 +55,7 @@ export const Home = () => {
           </Stack>
         </Container>
         <Wrap spacing={4} mt={8}>
-          {RECIPES.map(renderResult)}
+          {recipes?.map(renderResult)}
         </Wrap>
       </Container>
     </Page>

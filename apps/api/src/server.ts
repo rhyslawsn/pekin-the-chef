@@ -1,6 +1,7 @@
 import * as bodyParser from "body-parser";
 import cors from "cors";
 import express from "express";
+import { ENV } from "./config/env.config";
 
 const app = express();
 
@@ -11,7 +12,7 @@ app.use(express.json({ limit: "50mb" }));
 const corsOptions = {
   origin: (origin: string | undefined, callback) => {
     // No CORS check in development
-    if (process.env.NODE_ENV === "development") {
+    if (ENV.APP_ENV === "dev") {
       callback(null, true);
       return;
     }

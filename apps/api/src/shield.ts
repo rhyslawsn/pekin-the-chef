@@ -1,11 +1,14 @@
 import { TRPCError } from "@trpc/server";
-import { deny, shield } from "trpc-shield";
+import { allow, deny, shield } from "trpc-shield";
 
 import { Context } from "./context";
 
 export const webPermissions = shield<Context>(
   {
-    query: {},
+    query: {
+      getRecipe: allow,
+      getRecipes: allow,
+    },
     mutation: {},
   },
   {

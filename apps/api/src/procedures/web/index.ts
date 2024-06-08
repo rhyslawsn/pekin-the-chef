@@ -1,5 +1,8 @@
-import { t } from "../../trpc";
+import { trpc } from "../../trpc";
+import * as recipeProcedures from "./recipe/index";
 
-export const webRouter = t.router({});
+export const router = trpc.router({
+  ...recipeProcedures,
+});
 
-export type WebRouter = typeof webRouter;
+export type Router = typeof router;

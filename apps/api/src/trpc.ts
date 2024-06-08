@@ -1,9 +1,6 @@
-import { initTRPC } from "@trpc/server";
+import * as TRPC from "@trpc/server";
 
 import { Context } from "./context";
-import { webPermissions } from "./shield";
 
-export const t = initTRPC.context<Context>().create();
-
-// Web
-export const procedure = t.procedure.use(webPermissions);
+export const trpc = TRPC.initTRPC.context<Context>().create();
+export const middleware = trpc.middleware;

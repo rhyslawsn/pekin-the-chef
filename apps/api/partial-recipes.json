@@ -1,0 +1,87 @@
+[
+  {
+    "title": "SPAGHETTI BOLOGNESE",
+    "description": "San Marzano tomatoes, pork and beef, basil, parmigiano",
+    "price": 25.95
+  },
+  {
+    "title": "LASAGNA",
+    "description": "Berryman Farms ground beef and port, bechamel sauce, mozzarella, spinach, parmigiano",
+    "price": 29.95
+  },
+  {
+    "title": "SALMON",
+    "description": "Tarragon cream sauce, pesto, peas, spinach, potato pave, almonds",
+    "price": 33.95
+  },
+  {
+    "title": "HALF ROTISSERIE CHICKEN",
+    "description": "Rosemary smashed up potatoes, gravy, 10 Acres seasonal farm vegetables",
+    "price": 31.95
+  },
+  {
+    "title": "STEAK SANDWICH",
+    "description": "6oz sirloin, focaccia, garlic aioli, smoked cheddar, balsamic reduction, arugula",
+    "price": 24.95
+  },
+  {
+    "title": "10 ACRES FARM OMELETTE",
+    "description": "Chives, gruyere, raclette, cheddar, greens or crispy crushed potatoes",
+    "price": 16.95
+  },
+  {
+    "title": "DUCK CONFIT",
+    "description": "Cannellini beans, chirizo vinaigrette, celery, roasted squash, spinach, shallots",
+    "price": 28.95
+  },
+  {
+    "title": "CHICKEN PARMIGIANA",
+    "description": "House made fresh fettucine, san marzano tomatoes, parmigiano",
+    "price": 26.95
+  },
+  {
+    "title": "AGNOLOTTI",
+    "description": "Ricotta and herb stuffed, carrot puree, peas, spring radish, asparagus, shallots, leeks",
+    "price": 24.5
+  },
+  {
+    "title": "BERRYMAN FARM SMOKED PORK CHOP",
+    "description": "Rosemary smashed up potatoes, 10 Acres Farm mostarda, shallot jus",
+    "price": 31.95
+  },
+  {
+    "title": "THE BISTRO BURGER",
+    "description": "Berryman Farms fresh chuck, our secret sauce, American cheese, lettuce, red onions",
+    "price": 23.95
+  },
+  {
+    "title": "CHEESE PLATE",
+    "description": "Chef selection of cheese and cured meat, pate, marinated olives, cornichons, mustard, and 10 Acres Bakery baguette",
+    "price": 29.5
+  },
+  {
+    "title": "MUSSEL + CLAM STEAMER",
+    "description": "White wine, garlic, butter, herbs, toasted baguette",
+    "price": 27.95
+  },
+  {
+    "title": "HEALTHY-ISH TOAST",
+    "description": "10 Acres Bakery sourdough, romesco, avocado, chimichurri, 2 poached eggs, Berryman Farm bacon",
+    "price": 17.95
+  },
+  {
+    "title": "ASHMEAD FARM GLAZED LAMB CHOP",
+    "description": "Sticky chili garlic sauce",
+    "price": 17.5
+  },
+  {
+    "title": "ASPARAGUS SALAD",
+    "description": "Crispy garlic and almond crumb, balsamic & parmesan dressing, radish, arugula, cured egg yolk",
+    "price": 15.95
+  },
+  {
+    "title": "CRAB CAKE",
+    "description": "[Description not available]",
+    "price": 24.0
+  }
+]

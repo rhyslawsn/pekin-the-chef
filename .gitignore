@@ -10,3 +10,13 @@ dist-ssr
 server/dist
 public/dist
 *.csv
+
+# Ignore the build directory
+/build
+
+# Ignore the public directory
+/public
+
+# Ignore the data files
+./apps/api/partial-recpies.json
+./apps/api/places.csv

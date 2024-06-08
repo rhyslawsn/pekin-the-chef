@@ -1,8 +1,8 @@
-import { WebRouter } from "@recipe-wiki/api";
+import { Router } from "@recipe-wiki/api";
 import { createTRPCReact } from "@trpc/react-query";
 import { inferRouterInputs, inferRouterOutputs } from "@trpc/server";
 
-export type TrpcInputs = inferRouterInputs<WebRouter>;
-export type TrpcOutputs = NonNullable<inferRouterOutputs<WebRouter>>;
+export type TrpcInputs = inferRouterInputs<Router>;
+export type TrpcOutputs = NonNullable<inferRouterOutputs<Router>>;
 
-export const trpc = createTRPCReact<WebRouter>();
+export const trpc = createTRPCReact<Router>();

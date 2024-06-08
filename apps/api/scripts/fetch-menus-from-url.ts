@@ -137,7 +137,9 @@ const fetchMenusFromPlace = async (place) => {
 
 const main = async () => {
   //   Loop through places.csv and fetch menus from each url in the property menuUrls
-  const rawPlaces = readFileSync("places.csv", "utf-8");
+  const rawPlaces = readFileSync("places.csv", {
+    encoding: "utf-8",
+  });
   const places = JSON.parse(rawPlaces);
 
   const nextPlace = await fetchMenusFromPlace(places[19]);
