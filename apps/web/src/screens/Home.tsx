@@ -5,17 +5,27 @@ import {
   Image,
   Heading,
   Text,
-  AspectRatio,
   Wrap,
+  Button,
 } from "@chakra-ui/react";
 import { Page } from "../components/Page";
 import { Link } from "react-router-dom";
 import { TrpcOutputs, trpc } from "../config/trpc";
+import { name, normalizeSearch, recipeTitle } from "../utils/formatters";
+import { ChangeEvent, useState } from "react";
+import { useDebounce } from "usehooks-ts";
 
-type Recipe = TrpcOutputs["getRecipe"];
+type Recipe = TrpcOutputs["getRecipes"][0];
 
 export const Home = () => {
-  const { data: recipes } = trpc.getRecipes.useQuery();
+  const [search, setSearch] = useState<string>("");
+  const query = useDebounce(search, 500);
+
+  const { data: recipes } = trpc.getRecipes.useQuery({ query });
+
+  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearch(normalizeSearch(e.target.value));
+  };
 
   const renderResult = (result: Recipe) => {
     return (
@@ -25,18 +35,30 @@ export const Home = () => {
         bg="gray.200"
         borderRadius="md"
         w="fit-content"
+        maxW="sm"
         as={Link}
         to={`/recipes/${result.id}`}
       >
-        <AspectRatio ratio={4 / 3} w="200px">
-          <Image
-            src={result.imageUrls[0]}
-            alt={result.title}
-            borderTopRadius="md"
-          />
-        </AspectRatio>
+        <Image
+          src={result.imageUrls?.[0]}
+          alt={result.title}
+          objectFit="cover"
+          borderTopRadius="md"
+          w="sm"
+          h="2xs"
+        />
         <Stack m="2">
-          <Heading size="md">{result.title}</Heading>
+          <Heading size="sm">
+            {recipeTitle(result.title)} by{" "}
+            <Button
+              as={Link}
+              to={`/${result.authorId}`}
+              variant="link"
+              color="black"
+            >
+              {name(result.author)}
+            </Button>
+          </Heading>
           <Text>{result.description}</Text>
         </Stack>
       </Stack>
@@ -51,10 +73,11 @@ export const Home = () => {
             <Input
               placeholder="Find recipes from your favourite restaurants..."
               size="lg"
+              onChange={handleSearch}
             />
           </Stack>
         </Container>
-        <Wrap spacing={4} mt={8}>
+        <Wrap spacing={4} mt={8} justify="space-evenly">
           {recipes?.map(renderResult)}
         </Wrap>
       </Container>
