@@ -1,9 +1,8 @@
-import { TrpcOutputs } from "../config/trpc";
+// import { TrpcOutputs } from "../config/trpc";
 
-type User = TrpcOutputs["getUser"];
+// type User = TrpcOutputs["getUser"];
 
-export const name = (user: Partial<User>) =>
-  `${user.firstName} ${user.lastName}`;
+export const name = (user: any) => `${user.firstName} ${user.lastName}`;
 
 // Upper case the first letter of each word, lower case the rest
 export const recipeTitle = (title: string) => {
