@@ -4,7 +4,7 @@ import { config } from "dotenv";
 
 config();
 
-const AUTHOR_ID = 2;
+const AUTHOR_ID = 3;
 
 const inCents = (price: number) => {
   return price * 100;
@@ -27,6 +27,7 @@ const main = async () => {
           title: recipe.title,
           description: recipe.description,
           price: inCents(recipe.price),
+          imageUrls: recipe.imageUrls,
           author: { connect: { id: AUTHOR_ID } },
         },
       });

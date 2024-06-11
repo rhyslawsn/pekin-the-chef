@@ -4,9 +4,9 @@ import { createClient } from "@supabase/supabase-js";
 
 config();
 
-const FIRST_NAME = "10 Acres";
+const FIRST_NAME = "Papa Johns";
 const LAST_NAME = "";
-const EMAIL = "placeholder@recipewiki.com";
+const EMAIL = "placeholder+1@recipewiki.com";
 
 const createAuthor = async () => {
   const prisma = new PrismaClient();
@@ -17,7 +17,7 @@ const createAuthor = async () => {
   try {
     // Create Supabase user
     const { data, error } = await supabase.auth.admin.createUser({
-      email: "placeholder@recipewiki.com",
+      email: EMAIL,
       password: process.env.PLACEHOLDER_PASSWORD || "",
     });
 
