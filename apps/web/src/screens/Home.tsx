@@ -7,6 +7,7 @@ import {
   Text,
   Wrap,
   Button,
+  AspectRatio,
 } from "@chakra-ui/react";
 import { Page } from "../components/Page";
 import { Link } from "react-router-dom";
@@ -14,6 +15,7 @@ import { TrpcOutputs, trpc } from "../config/trpc";
 import { name, normalizeSearch, recipeTitle } from "../utils/formatters";
 import { ChangeEvent, useState } from "react";
 import { useDebounce } from "usehooks-ts";
+import hero from "../assets/recipe-wiki-hero.jpg";
 
 type Recipe = TrpcOutputs["getRecipes"][0];
 
@@ -35,9 +37,9 @@ export const Home = () => {
         bg="gray.200"
         borderRadius="md"
         w="fit-content"
-        maxW="sm"
+        maxW="xs"
         as={Link}
-        to={`/recipes/${result.id}`}
+        to={`/${result.author.username}/${result.slug}`}
       >
         <Image
           src={result.imageUrls?.[0]}
@@ -52,7 +54,7 @@ export const Home = () => {
             {recipeTitle(result.title)} by{" "}
             <Button
               as={Link}
-              to={`/${result.authorId}`}
+              to={`/${result.author.username}`}
               variant="link"
               color="black"
             >
@@ -66,18 +68,32 @@ export const Home = () => {
   };
 
   return (
-    <Page>
-      <Container maxW="container.lg" overflowY="auto">
-        <Container maxW="container.sm" h="sm">
-          <Stack spacing={4} h="full" justify="center">
-            <Input
-              placeholder="Find recipes from your favourite restaurants..."
-              size="lg"
-              onChange={handleSearch}
-            />
+    <Page overflowY="auto">
+      <Container maxW="container.lg">
+        <Stack spacing={4} justify="center">
+          <Stack spacing={2} direction="row" align="center">
+            <Stack flex="2">
+              <Heading size="2xl" color="gray.700">
+                Dinner ideas from your favourite restaurants
+              </Heading>
+              <Heading size="md" color="gray.500">
+                Find recipes from your favourite restaurants and chefs.
+              </Heading>
+            </Stack>
+            <AspectRatio ratio={1} flex="1">
+              <Image
+                src={hero}
+                alt="Credit: https://www.istockphoto.com/portfolio/gbh007"
+              />
+            </AspectRatio>
           </Stack>
-        </Container>
-        <Wrap spacing={4} mt={8} justify="space-evenly">
+          <Input
+            placeholder="Find recipes from your favourite restaurants..."
+            size="lg"
+            onChange={handleSearch}
+          />
+        </Stack>
+        <Wrap spacing={4} mt={8}>
           {recipes?.map(renderResult)}
         </Wrap>
       </Container>

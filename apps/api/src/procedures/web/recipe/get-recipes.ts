@@ -23,7 +23,9 @@ export const getRecipes = procedure.input(schema).query(async ({ input }) => {
         ],
       },
       include: {
-        author: { select: { id: true, firstName: true, lastName: true } },
+        author: {
+          select: { id: true, firstName: true, lastName: true, username: true },
+        },
       },
     });
     if (!recipe) {

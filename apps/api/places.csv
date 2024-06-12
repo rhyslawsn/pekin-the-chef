@@ -997,14 +997,6 @@
     "menuAssetUrls": []
   },
   {
-    "name": "10 Acres Bistro",
-    "website": "https://10acres.ca/bistro-restaurant/",
-    "menuUrls": [],
-    "address": "611 Courtney St, Victoria, BC V8W 1W8, Canada",
-    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
-    "menuAssetUrls": []
-  },
-  {
     "name": "YuaBistro",
     "website": "http://www.yuabistro.com/",
     "menuUrls": [
