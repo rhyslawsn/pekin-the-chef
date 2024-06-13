@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 
-const convertToUsername = (title: string) => {
+export const convertToUsername = (title: string) => {
   // Remove all characters except for letters, numbers
   const cleanedTitle = title.replace(/[^a-zA-Z0-9]/g, "");
 

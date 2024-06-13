@@ -4,9 +4,9 @@ import { createClient } from "@supabase/supabase-js";
 
 config();
 
-const FIRST_NAME = "Papa Johns";
+const FIRST_NAME = "Bodega Bar";
 const LAST_NAME = "";
-const EMAIL = "placeholder+1@recipewiki.com";
+const EMAIL = "placeholder+2@recipewiki.com";
 
 const createAuthor = async () => {
   const prisma = new PrismaClient();

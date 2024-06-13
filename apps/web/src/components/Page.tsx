@@ -1,4 +1,4 @@
-import { Flex, FlexProps } from "@chakra-ui/react";
+import { Container, Flex, FlexProps } from "@chakra-ui/react";
 import { Helmet } from "react-helmet-async";
 
 interface Props extends FlexProps {
@@ -12,7 +12,7 @@ export const Page = ({ title, children, ...rest }: Props) => {
       <Helmet>
         <title>{title ? `${title} • ` : ""}Recipe Wiki</title>
       </Helmet>
-      {children}
+      <Container maxW="container.lg">{children}</Container>
     </Flex>
   );
 };

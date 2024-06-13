@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 
-const convertToSlug = (title: string) => {
+export const convertToSlug = (title: string) => {
   // Remove all characters except for letters, numbers and spaces
   const cleanedTitle = title.replace(/[^a-zA-Z0-9 ]/g, "");
 

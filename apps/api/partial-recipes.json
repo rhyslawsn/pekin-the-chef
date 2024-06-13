@@ -346,7 +346,9 @@
       "Top with slices of brie cheese.",
       "Grill until cheese is melted and bread is toasted."
     ],
-    "imageUrls": []
+    "imageUrls": [
+      "https://www.halfbakedharvest.com/wp-content/uploads/2021/06/Picnic-Style-Brie-and-Prosciutto-Sandwich.-1.jpg"
+    ]
   },
   {
     "title": "CAPICOLA BOCADILLO",
@@ -364,7 +366,9 @@
       "Slice and layer on sandwich bread with giardiniera and mixed greens.",
       "Serve immediately."
     ],
-    "imageUrls": []
+    "imageUrls": [
+      "https://grillgirl.com/wp-content/uploads/2012/07/DSC_0379.jpg"
+    ]
   },
   {
     "title": "ROASTED CARROTS",
@@ -384,7 +388,9 @@
       "Sprinkle with dukkah.",
       "Garnish with pea tendrils and serve with a side of puffed wild rice."
     ],
-    "imageUrls": []
+    "imageUrls": [
+      "https://terianncarty.com/wp-content/uploads/2023/11/roasted-carrots-3-e1700496331508-768x1155.jpg"
+    ]
   },
   {
     "title": "SAUSAGE AND CLAMS",
@@ -403,7 +409,9 @@
       "Mix in butter beans and drizzle with herb oil.",
       "Serve with slices of focaccia bread."
     ],
-    "imageUrls": []
+    "imageUrls": [
+      "https://images.squarespace-cdn.com/content/v1/5f31e9b858f8065dad844df1/1599265734634-DA861X6M8NNEL8QZNHDX/clams.jpg"
+    ]
   },
   {
     "title": "PATATAS BRAVAS",
@@ -415,7 +423,9 @@
       "Serve topped with spicy tomato sauce.",
       "Drizzle garlic aioli over the top."
     ],
-    "imageUrls": []
+    "imageUrls": [
+      "https://cravingsbychrissyteigen.com/cdn/shop/articles/051419_CT_POTATO_BRAVAS_H_p.jpg?v=1695818668"
+    ]
   },
   {
     "title": "PATATAS SUPREMAS",
@@ -433,7 +443,9 @@
       "Top with slices of jamón and a soft boiled egg.",
       "Sprinkle with shaved manchego and drizzle with aioli."
     ],
-    "imageUrls": []
+    "imageUrls": [
+      "https://i0.wp.com/spainonafork.com/wp-content/uploads/2021/10/image8-41-11.png?fit=750%2C750&ssl=1"
+    ]
   },
   {
     "title": "GAMBAS AL AJILLO",
@@ -450,7 +462,9 @@
       "Sauté prawns in garlic chili butter until pink and cooked through.",
       "Serve hot with slices of focaccia bread for dipping."
     ],
-    "imageUrls": []
+    "imageUrls": [
+      "https://thesaltedpotato.com/wp-content/uploads/2022/07/tomato_shrimp_focaccia-wpp1658897945907.jpg"
+    ]
   },
   {
     "title": "SPANISH CHORIZO",
@@ -466,11 +480,13 @@
       "Roast slices of Spanish chorizo until crisp.",
       "Serve with a squeeze of lime and a dollop of whole grain mustard on a bed of mixed greens."
     ],
-    "imageUrls": []
+    "imageUrls": [
+      "https://bevcooks.com/wp-content/uploads/2016/02/chorizo3-2.jpg"
+    ]
   },
   {
     "title": "STEWED MUSHROOMS & LENTILS",
-    "description": "green kale, sherry vinaigrette, add chorizo $5",
+    "description": "green kale, sherry vinaigrette, add chorizo",
     "price": 9,
     "ingredients": [
       "mushrooms",
@@ -484,7 +500,9 @@
       "Stir in chopped green kale and cook until wilted.",
       "Dress with sherry vinaigrette and add chorizo if desired."
     ],
-    "imageUrls": []
+    "imageUrls": [
+      "https://thefirstmess.com/wp-content/uploads/fly-images/12113/mushrooms-kale-stew-500x375-c.jpg"
+    ]
   },
   {
     "title": "BEETS AND MOLE",
@@ -496,7 +514,9 @@
       "Top with mole sauce and slices of fresh mozzarella.",
       "Serve with rye crisps."
     ],
-    "imageUrls": []
+    "imageUrls": [
+      "https://i.guim.co.uk/img/media/a177917353622ff2c1d1a3566bafa20d30f92837/0_1913_5711_6006/master/5711.jpg"
+    ]
   },
   {
     "title": "SLICED BAGUETTE OR HOUSE-MADE FOCACCIA BREAD",
@@ -513,7 +533,9 @@
       "Slice baguette or focaccia bread.",
       "Serve with options of olive oil & vinegar or butter for dipping."
     ],
-    "imageUrls": []
+    "imageUrls": [
+      "https://www.onthegobites.com/wp-content/uploads/2017/11/Garlic-dipping-oil-with-focaccia.jpg"
+    ]
   },
   {
     "title": "GLUTEN FRIENDLY BREAD OR CRACKERS",
@@ -521,7 +543,9 @@
     "price": 4,
     "ingredients": ["gluten-free bread", "gluten-free crackers"],
     "directions": ["Provide a selection of gluten-free bread and crackers."],
-    "imageUrls": []
+    "imageUrls": [
+      "https://theloopywhisk.com/wp-content/uploads/2020/04/Gluten-Free-Bread_730px-featured.jpg"
+    ]
   },
   {
     "title": "CHOCOLATE DUO",
@@ -539,7 +563,9 @@
       "Chill until set.",
       "Serve with shavings of white chocolate on top."
     ],
-    "imageUrls": []
+    "imageUrls": [
+      "https://www.crazyforcrust.com/wp-content/uploads/2013/06/malted-pudding-1-of-4w-500x375.jpg"
+    ]
   },
   {
     "title": "CREMA CATALANA",
@@ -558,7 +584,9 @@
       "Chill and then brûlée the top with sugar.",
       "Serve with stewed peaches."
     ],
-    "imageUrls": []
+    "imageUrls": [
+      "https://i0.wp.com/wanderingsinmykitchen.com/wp-content/uploads/2019/05/Crema-Catalana-Featured-Image-1.jpg?fit=1024%2C539&ssl=1"
+    ]
   },
   {
     "title": "BASQUE CHEESECAKE",
@@ -577,7 +605,9 @@
       "Bake until burnt at the edges.",
       "Cool and serve with fruit compote and grated white chocolate."
     ],
-    "imageUrls": []
+    "imageUrls": [
+      "https://vikalinka.com/wp-content/uploads/2021/08/Basque-Cheesecake-8-Edit-2.jpg"
+    ]
   },
   {
     "title": "HOUSE-MADE SORBET",
@@ -589,6 +619,8 @@
       "Freeze in an ice cream maker until smooth and firm.",
       "Serve chilled with fresh fruit garnish."
     ],
-    "imageUrls": []
+    "imageUrls": [
+      "https://www.biggerbolderbaking.com/wp-content/uploads/2016/04/IMG_0692.jpg"
+    ]
   }
 ]

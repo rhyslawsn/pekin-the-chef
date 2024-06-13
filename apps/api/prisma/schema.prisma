@@ -19,7 +19,7 @@ model User {
   lastName  String?
   email     String  @unique
 
-  username String?
+  username String @unique
 
   isAdmin Boolean @default(false)
 
@@ -46,5 +46,6 @@ model Recipe {
   authorId Int
   author   User @relation(fields: [authorId], references: [id])
 
+  @@unique([slug, authorId])
   @@map("recipes")
 }

@@ -1,10 +1,11 @@
 import { readFileSync } from "fs";
 import { PrismaClient } from "@prisma/client";
 import { config } from "dotenv";
+import { convertToSlug } from "./update-recipe-slugs";
 
 config();
 
-const AUTHOR_ID = 3;
+const AUTHOR_ID = 4;
 
 const inCents = (price: number) => {
   return price * 100;
@@ -24,10 +25,9 @@ const main = async () => {
     try {
       await prisma.recipe.create({
         data: {
-          title: recipe.title,
-          description: recipe.description,
+          ...recipe,
+          slug: convertToSlug(recipe.title),
           price: inCents(recipe.price),
-          imageUrls: recipe.imageUrls,
           author: { connect: { id: AUTHOR_ID } },
         },
       });

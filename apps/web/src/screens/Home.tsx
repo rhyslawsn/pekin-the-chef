@@ -69,34 +69,32 @@ export const Home = () => {
 
   return (
     <Page overflowY="auto">
-      <Container maxW="container.lg">
-        <Stack spacing={4} justify="center">
-          <Stack spacing={2} direction="row" align="center">
-            <Stack flex="2">
-              <Heading size="2xl" color="gray.700">
-                Dinner ideas from your favourite restaurants
-              </Heading>
-              <Heading size="md" color="gray.500">
-                Find recipes from your favourite restaurants and chefs.
-              </Heading>
-            </Stack>
-            <AspectRatio ratio={1} flex="1">
-              <Image
-                src={hero}
-                alt="Credit: https://www.istockphoto.com/portfolio/gbh007"
-              />
-            </AspectRatio>
+      <Stack spacing={4} justify="center">
+        <Stack spacing={2} direction="row" align="center">
+          <Stack flex="2">
+            <Heading size="2xl" color="gray.700">
+              Dinner ideas from your favourite restaurants
+            </Heading>
+            <Heading size="md" color="gray.500">
+              Find recipes from your favourite restaurants and chefs.
+            </Heading>
           </Stack>
-          <Input
-            placeholder="Find recipes from your favourite restaurants..."
-            size="lg"
-            onChange={handleSearch}
-          />
+          <AspectRatio ratio={1} flex="1">
+            <Image
+              src={hero}
+              alt="Credit: https://www.istockphoto.com/portfolio/gbh007"
+            />
+          </AspectRatio>
         </Stack>
-        <Wrap spacing={4} mt={8}>
-          {recipes?.map(renderResult)}
-        </Wrap>
-      </Container>
+        <Input
+          placeholder="Find recipes from your favourite restaurants..."
+          size="lg"
+          onChange={handleSearch}
+        />
+      </Stack>
+      <Wrap spacing={4} mt={8}>
+        {recipes?.map(renderResult)}
+      </Wrap>
     </Page>
   );
 };
