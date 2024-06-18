@@ -1,4 +1,0 @@
-{
-  "extends": "@recipe-wiki/typescript-config/vite.json",
-  "include": ["src"]
-}
