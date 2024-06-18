@@ -34,6 +34,7 @@
     "prisma": "5.12.1",
     "trpc-shield": "0.4.4",
     "tsconfig": "*",
+    "tsup": "^8.1.0",
     "util": "0.12.5",
     "uuid": "9.0.1",
     "xml2js": "^0.6.2",
