@@ -38,21 +38,19 @@ export const Recipe = () => {
 
   return (
     <Page title="Recipe" overflowY="auto">
-      <Stack p="8" my="8">
+      <Stack p="8" my="8" spacing="4">
         <AspectRatio ratio={1} maxH="lg">
           <Image src={recipe?.imageUrls?.[0]} alt={recipe?.title} />
         </AspectRatio>
-        <Stack spacing="6">
-          <Stack>
-            <Heading fontSize="2xl" color="gray.700">
-              {recipe?.title}
-            </Heading>
-            <Heading fontSize="md" color="gray.500">
-              by <Username>{params?.username}</Username>
-            </Heading>
-          </Stack>
-          <Text>{recipe?.description}</Text>
+        <Stack>
+          <Heading fontSize="2xl" color="gray.700">
+            {recipe?.title}
+          </Heading>
+          <Heading fontSize="md" color="gray.500">
+            by <Username>{params?.username}</Username>
+          </Heading>
         </Stack>
+        <Text fontSize="lg">{recipe?.description}</Text>
         <Stack>
           <Card>
             <CardHeader fontSize="lg" fontWeight="medium">
