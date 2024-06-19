@@ -13,6 +13,8 @@ public/dist
 
 # Ignore the build directory
 /build
+/apps/api/build
+/apps/web/build
 
 # Ignore the public directory
 /public
