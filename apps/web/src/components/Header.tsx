@@ -25,7 +25,7 @@ export const Header = () => {
           as={Link}
           to="/"
         >
-          Peking
+          Pekin
           <br />
           the Chef
         </Heading>
