@@ -28,17 +28,13 @@ export const Recipe = () => {
     return <Text>- {ingredients}</Text>;
   };
 
-  const renderDirection = (directions: string, index) => {
-    return (
-      <Text>
-        {index + 1}. {directions}
-      </Text>
-    );
+  const renderDirection = (direction: string) => {
+    return <Text>{direction}</Text>;
   };
 
   return (
     <Page title="Recipe" overflowY="auto">
-      <Stack p="8" my="8" spacing="4">
+      <Stack py="8" my="8" spacing="4">
         <AspectRatio ratio={1} maxH="lg">
           <Image src={recipe?.imageUrls?.[0]} alt={recipe?.title} />
         </AspectRatio>

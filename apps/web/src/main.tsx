@@ -7,6 +7,14 @@ import { TRPC } from "./components/TRPC";
 import { theme } from "./config/theme";
 import { Router } from "./Router";
 
+import { ReactTagManager } from "react-gtm-ts";
+
+ReactTagManager.init({
+  code: "GTM-52K4Q9RL",
+  debug: false,
+  performance: true, // starts GTM only after user interaction (improve initial page load)
+});
+
 const App = () => {
   return (
     <HelmetProvider>
