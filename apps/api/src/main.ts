@@ -10,7 +10,7 @@ import { app } from "./server";
 const port = process.env.PORT ?? 3000;
 
 const server = app.listen(Number(port), () =>
-  console.log(`🍜 Recipe Wiki (API) is now running on PORT ${port}`)
+  console.log(`🦆 Pekin the Chef (API) is now running on PORT ${port}`)
 );
 
 app.use(
