@@ -1,4 +1,4 @@
-# Recipe Wiki 🍜
+# Pekin the Chef 🦆
 
 This is an official starter Turborepo.
 
