@@ -5,8 +5,7 @@ import { Recipe } from "./screens/Recipe";
 export const Router = () => {
   return (
     <Routes>
-      <Route path="/">
-        <Route index element={<Home />} />
+      <Route path="/" element={<Home />}>
         <Route path=":username/:slug">
           <Route index element={<Recipe />} />
         </Route>
