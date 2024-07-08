@@ -20,7 +20,7 @@ import { Username } from "../components/Username";
 export const Recipe = () => {
   const params = useParams<{ username: string; slug: string }>();
 
-  const { data: recipe } = trpc.getRecipe.useQuery(params);
+  const { data: recipe, isLoading } = trpc.getRecipe.useQuery(params);
 
   const renderIngredient = (ingredients: string) => {
     return <Text>- {ingredients}</Text>;
@@ -29,6 +29,10 @@ export const Recipe = () => {
   const renderDirection = (direction: string) => {
     return <Text>{direction}</Text>;
   };
+
+  if (isLoading) {
+    return <Page title="Recipe">Loading...</Page>;
+  }
 
   return (
     <Page title="Recipe" overflowY="auto">
