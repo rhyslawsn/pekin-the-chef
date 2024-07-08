@@ -5,15 +5,9 @@ import { Recipe } from "./screens/Recipe";
 export const Router = () => {
   return (
     <Routes>
-      <Route path="/">
-        <Route index element={<Home />} />
-        <Route path="/:username">
-          <Route index element={<Home />} />
-          <Route path="/:username/:slug">
-            <Route index element={<Recipe />} />
-          </Route>
-        </Route>
-      </Route>
+      <Route path="/" element={<Home />} />
+      <Route path="/:username/:slug" element={<Recipe />} />
+      <Route path="*" element={<div>404 Not Found</div>} />
     </Routes>
   );
 };
