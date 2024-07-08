@@ -68,41 +68,38 @@ export const Home = () => {
   };
 
   return (
-    <>
-      <Page overflowY="auto">
-        <Stack spacing={4} justify="center">
-          <Stack spacing={2} direction="row" align="center">
-            <Stack flex="2">
-              <Heading size="2xl" color="gray.700">
-                Dinner ideas from your favourite restaurants
-              </Heading>
-              <Heading size="md" color="gray.500">
-                Find recipes from your favourite restaurants and chefs.
-              </Heading>
-            </Stack>
-            <AspectRatio ratio={1} flex="1">
-              <Image
-                src={hero}
-                alt="Credit: https://www.istockphoto.com/portfolio/gbh007"
-              />
-            </AspectRatio>
+    <Page overflowY="auto">
+      <Stack spacing={4} justify="center">
+        <Stack spacing={2} direction="row" align="center">
+          <Stack flex="2">
+            <Heading size="2xl" color="gray.700">
+              Dinner ideas from your favourite restaurants
+            </Heading>
+            <Heading size="md" color="gray.500">
+              Find recipes from your favourite restaurants and chefs.
+            </Heading>
           </Stack>
-          <Input
-            placeholder="Find recipes from your favourite restaurants..."
-            size="lg"
-            onChange={handleSearch}
-          />
+          <AspectRatio ratio={1} flex="1">
+            <Image
+              src={hero}
+              alt="Credit: https://www.istockphoto.com/portfolio/gbh007"
+            />
+          </AspectRatio>
         </Stack>
-        <Wrap spacing={4} mt={8}>
-          {recipes?.map(renderResult)}
-        </Wrap>
-        <Show if={isLoading}>
-          <Stack align="center" mt={8}>
-            <Spinner />
-          </Stack>
-        </Show>
-      </Page>
-      <Outlet />
-    </>
+        <Input
+          placeholder="Find recipes from your favourite restaurants..."
+          size="lg"
+          onChange={handleSearch}
+        />
+      </Stack>
+      <Wrap spacing={4} mt={8}>
+        {recipes?.map(renderResult)}
+      </Wrap>
+      <Show if={isLoading}>
+        <Stack align="center" mt={8}>
+          <Spinner />
+        </Stack>
+      </Show>
+    </Page>
   );
 };
