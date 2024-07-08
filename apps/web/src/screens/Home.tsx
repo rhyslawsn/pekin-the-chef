@@ -10,7 +10,7 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 import { Page } from "../components/Page";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { TrpcOutputs, trpc } from "../config/trpc";
 import { name, normalizeSearch, recipeTitle } from "../utils/formatters";
 import { ChangeEvent, useState } from "react";
@@ -68,38 +68,41 @@ export const Home = () => {
   };
 
   return (
-    <Page overflowY="auto">
-      <Stack spacing={4} justify="center">
-        <Stack spacing={2} direction="row" align="center">
-          <Stack flex="2">
-            <Heading size="2xl" color="gray.700">
-              Dinner ideas from your favourite restaurants
-            </Heading>
-            <Heading size="md" color="gray.500">
-              Find recipes from your favourite restaurants and chefs.
-            </Heading>
+    <>
+      <Page overflowY="auto">
+        <Stack spacing={4} justify="center">
+          <Stack spacing={2} direction="row" align="center">
+            <Stack flex="2">
+              <Heading size="2xl" color="gray.700">
+                Dinner ideas from your favourite restaurants
+              </Heading>
+              <Heading size="md" color="gray.500">
+                Find recipes from your favourite restaurants and chefs.
+              </Heading>
+            </Stack>
+            <AspectRatio ratio={1} flex="1">
+              <Image
+                src={hero}
+                alt="Credit: https://www.istockphoto.com/portfolio/gbh007"
+              />
+            </AspectRatio>
           </Stack>
-          <AspectRatio ratio={1} flex="1">
-            <Image
-              src={hero}
-              alt="Credit: https://www.istockphoto.com/portfolio/gbh007"
-            />
-          </AspectRatio>
+          <Input
+            placeholder="Find recipes from your favourite restaurants..."
+            size="lg"
+            onChange={handleSearch}
+          />
         </Stack>
-        <Input
-          placeholder="Find recipes from your favourite restaurants..."
-          size="lg"
-          onChange={handleSearch}
-        />
-      </Stack>
-      <Wrap spacing={4} mt={8}>
-        {recipes?.map(renderResult)}
-      </Wrap>
-      <Show if={isLoading}>
-        <Stack align="center" mt={8}>
-          <Spinner />
-        </Stack>
-      </Show>
-    </Page>
+        <Wrap spacing={4} mt={8}>
+          {recipes?.map(renderResult)}
+        </Wrap>
+        <Show if={isLoading}>
+          <Stack align="center" mt={8}>
+            <Spinner />
+          </Stack>
+        </Show>
+      </Page>
+      <Outlet />
+    </>
   );
 };
