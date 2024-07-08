@@ -7,6 +7,5 @@ export default defineConfig({
   build: {
     outDir: "build",
   },
-  base: ".",
   appType: "mpa",
 });
