@@ -24,10 +24,7 @@ const corsOptions = {
     // Ignore ports
     origin = origin.replace(/:[0-9]+$/, "");
 
-    if (
-      origin.endsWith("recipe-wiki-production.up.railway.app") ||
-      origin.endsWith("pekinthechef.com")
-    ) {
+    if (origin.endsWith("pekinthechef.com")) {
       callback(null, true);
     } else {
       callback(null, false);
