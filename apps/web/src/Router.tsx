@@ -10,6 +10,7 @@ export const Router = () => {
           <Route index element={<Recipe />} />
         </Route>
       </Route>
+      <Route path="*" element={<div>Not Found</div>} />
     </Routes>
   );
 };
