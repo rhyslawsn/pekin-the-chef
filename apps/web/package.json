@@ -14,6 +14,7 @@
     "@recipe-wiki/eslint-config": "*",
     "@recipe-wiki/typescript-config": "*",
     "@vitejs/plugin-react-swc": "3.6.0",
+    "rollup": "4.18.1",
     "typescript": "5.4.5",
     "vite": "5.2.11"
   },
@@ -42,5 +43,8 @@
     "react-scripts": "5.0.1",
     "usehooks-ts": "2.9.1",
     "web-vitals": "3.5.2"
+  },
+  "resolutions": {
+    "rollup": "4.18.1"
   }
 }
