@@ -10,7 +10,7 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 import { Page } from "../components/Page";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { TrpcOutputs, trpc } from "../config/trpc";
 import { name, normalizeSearch, recipeTitle } from "../utils/formatters";
 import { ChangeEvent, useState } from "react";
