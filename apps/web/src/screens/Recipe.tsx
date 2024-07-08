@@ -20,9 +20,7 @@ import { Username } from "../components/Username";
 export const Recipe = () => {
   const params = useParams<{ username: string; slug: string }>();
 
-  const { data: recipe } = trpc.getRecipe.useQuery(params, {
-    refetchOnWindowFocus: false,
-  });
+  const { data: recipe } = trpc.getRecipe.useQuery(params);
 
   const renderIngredient = (ingredients: string) => {
     return <Text>- {ingredients}</Text>;
@@ -55,7 +53,7 @@ export const Recipe = () => {
             <Divider color="gray.200" />
             <CardBody>
               <Stack>
-                {recipe?.ingredients.map(renderIngredient)}
+                {recipe?.ingredients?.map(renderIngredient)}
                 <Show if={!recipe?.ingredients?.length}>
                   <Stack align="center">
                     <DataMissing
@@ -79,7 +77,7 @@ export const Recipe = () => {
             <Divider color="gray.200" />
             <CardBody>
               <Stack>
-                {recipe?.directions.map(renderDirection)}
+                {recipe?.directions?.map(renderDirection)}
                 <Show if={!recipe?.directions?.length}>
                   <Stack align="center">
                     <DataMissing

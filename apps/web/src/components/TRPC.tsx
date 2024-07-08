@@ -64,6 +64,11 @@ export const TRPC = ({ children }: Props) => {
           }
         },
       }),
+      defaultOptions: {
+        queries: {
+          refetchOnWindowFocus: false,
+        },
+      },
     });
   }, [errorToast]);
 

@@ -1,12 +1,12 @@
 import { PrismaClient } from "@prisma/client";
 import { config } from "dotenv";
 import { createClient } from "@supabase/supabase-js";
+import { convertToUsername } from "./update-usernames";
 
 config();
 
-const FIRST_NAME = "Bodega Bar";
+const FIRST_NAME = "Earls Kitchen + Bar - Victoria";
 const LAST_NAME = "";
-const EMAIL = "placeholder+2@recipewiki.com";
 
 const createAuthor = async () => {
   const prisma = new PrismaClient();
@@ -16,8 +16,10 @@ const createAuthor = async () => {
   );
   try {
     // Create Supabase user
+    const username = convertToUsername(`${FIRST_NAME}${LAST_NAME}`);
+    const email = `${username}@pekinthechef.com`;
     const { data, error } = await supabase.auth.admin.createUser({
-      email: EMAIL,
+      email,
       password: process.env.PLACEHOLDER_PASSWORD || "",
     });
 
@@ -27,8 +29,9 @@ const createAuthor = async () => {
       data: {
         firstName: FIRST_NAME,
         lastName: LAST_NAME,
-        email: EMAIL,
+        email,
         supabaseUserId: data?.user?.id || "",
+        username,
       },
     });
     console.log("Author created:", newAuthor);

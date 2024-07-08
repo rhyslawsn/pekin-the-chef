@@ -7,6 +7,7 @@ import {
   Wrap,
   Button,
   AspectRatio,
+  Spinner,
 } from "@chakra-ui/react";
 import { Page } from "../components/Page";
 import { Link } from "react-router-dom";
@@ -15,6 +16,7 @@ import { name, normalizeSearch, recipeTitle } from "../utils/formatters";
 import { ChangeEvent, useState } from "react";
 import { useDebounce } from "usehooks-ts";
 import hero from "../assets/recipe-wiki-hero.jpg";
+import { Show } from "../components/Show";
 
 type Recipe = TrpcOutputs["getRecipes"][0];
 
@@ -22,7 +24,7 @@ export const Home = () => {
   const [search, setSearch] = useState<string>("");
   const query = useDebounce(search, 500);
 
-  const { data: recipes } = trpc.getRecipes.useQuery({ query });
+  const { data: recipes, isLoading } = trpc.getRecipes.useQuery({ query });
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(normalizeSearch(e.target.value));
@@ -35,8 +37,8 @@ export const Home = () => {
         spacing={2}
         bg="gray.200"
         borderRadius="md"
-        w="fit-content"
-        maxW="xs"
+        flex="1"
+        minW="xs"
         as={Link}
         to={`/${result.author.username}/${result.slug}`}
       >
@@ -45,7 +47,6 @@ export const Home = () => {
           alt={result.title}
           objectFit="cover"
           borderTopRadius="md"
-          w="sm"
           h="2xs"
         />
         <Stack m="2">
@@ -94,6 +95,11 @@ export const Home = () => {
       <Wrap spacing={4} mt={8}>
         {recipes?.map(renderResult)}
       </Wrap>
+      <Show if={isLoading}>
+        <Stack align="center" mt={8}>
+          <Spinner />
+        </Stack>
+      </Show>
     </Page>
   );
 };

@@ -5,7 +5,7 @@ import { convertToSlug } from "./update-recipe-slugs";
 
 config();
 
-const AUTHOR_ID = 4;
+const AUTHOR_ID = 12;
 
 const inCents = (price: number) => {
   return price * 100;
