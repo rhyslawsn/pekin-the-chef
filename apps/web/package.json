@@ -5,7 +5,7 @@
   "homepage": "https://pekinthechef.com",
   "scripts": {
     "dev": "vite",
-    "start": "http-server ./build",
+    "start": "http-server ./build --proxy http://localhost:$PORT/index.html? -p $PORT -a ::",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint \"src/**/*.ts\""

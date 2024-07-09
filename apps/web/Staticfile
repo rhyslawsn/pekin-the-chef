@@ -1,0 +1,25 @@
+# Staticfile
+
+# This file is used to configure the behavior of the Staticfile buildpack.
+# For more information, refer to the Staticfile documentation: <link-to-documentation>
+
+# Set the root directory for serving static files
+root: public
+
+# Specify the default file to serve when a directory is requested
+# If not specified, the buildpack will look for index.html
+default_document: index.html
+
+# Specify the HTTP headers to be added to all responses
+headers:
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block
+
+# Specify the cache control headers for different file types
+cache_control:
+  - path: "*.html"
+    max_age: 0
+  - path: "*.css"
+    max_age: 1d
+  - path: "*.js"
+    max_age: 1h
