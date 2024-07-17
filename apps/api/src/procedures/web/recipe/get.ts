@@ -24,6 +24,7 @@ export const getRecipe = procedure.input(schema).query(async ({ input }) => {
           authorId: author?.id,
         },
       },
+      include: { author: true },
     });
     if (!recipe) {
       throw new TRPCError({ message: "Recipe not found", code: "NOT_FOUND" });

@@ -16,11 +16,28 @@ import {
 import { Show } from "../components/Show";
 import { DataMissing } from "../components/DataMissing";
 import { Username } from "../components/Username";
+import { useMemo } from "react";
 
 export const Recipe = () => {
   const params = useParams<{ username: string; slug: string }>();
 
   const { data: recipe, isLoading } = trpc.getRecipe.useQuery(params);
+
+  const title = useMemo(() => {
+    return recipe?.title || "Recipe";
+  }, [recipe?.title]);
+  const author = useMemo(() => {
+    return `@${params?.username}`;
+  }, [params?.username]);
+  const pageTitle = useMemo(() => {
+    return `${title} by ${author}`;
+  }, [title, author]);
+  const firstImageUrl = useMemo(() => {
+    return recipe?.imageUrls?.[0] || "";
+  }, [recipe?.imageUrls]);
+  const description = useMemo(() => {
+    return recipe?.description;
+  }, [recipe?.description]);
 
   const renderIngredient = (ingredients: string) => {
     return <Text>- {ingredients}</Text>;
@@ -31,24 +48,29 @@ export const Recipe = () => {
   };
 
   if (isLoading) {
-    return <Page title="Recipe">Loading...</Page>;
+    return <Page title={pageTitle}>Loading...</Page>;
   }
 
   return (
-    <Page title="Recipe" overflowY="auto">
+    <Page
+      title={pageTitle}
+      description={description}
+      imageUrl={firstImageUrl}
+      overflowY="auto"
+    >
       <Stack py="8" my="8" spacing="4">
         <AspectRatio ratio={1} maxH="lg">
-          <Image src={recipe?.imageUrls?.[0]} alt={recipe?.title} />
+          <Image src={firstImageUrl} alt={title} />
         </AspectRatio>
         <Stack>
           <Heading fontSize="2xl" color="gray.700">
-            {recipe?.title}
+            {title}
           </Heading>
           <Heading fontSize="md" color="gray.500">
             by <Username>{params?.username}</Username>
           </Heading>
         </Stack>
-        <Text fontSize="lg">{recipe?.description}</Text>
+        <Text fontSize="lg">{description}</Text>
         <Stack>
           <Card>
             <CardHeader fontSize="lg" fontWeight="medium">
