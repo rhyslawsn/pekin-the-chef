@@ -24,13 +24,13 @@ export const Recipe = () => {
   const { data: recipe, isLoading } = trpc.getRecipe.useQuery(params);
 
   const title = useMemo(() => {
-    return recipe?.title || "Recipe";
+    return recipe?.title;
   }, [recipe?.title]);
   const author = useMemo(() => {
     return `@${params?.username}`;
   }, [params?.username]);
   const pageTitle = useMemo(() => {
-    return `${title} by ${author}`;
+    return `${recipe?.title} by @${params?.username}`;
   }, [title, author]);
   const firstImageUrl = useMemo(() => {
     return recipe?.imageUrls?.[0] || "";
