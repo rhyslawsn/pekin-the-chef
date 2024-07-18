@@ -19,7 +19,7 @@ export const Page = ({
   return (
     <Flex direction="column" h="100vh" flex={1} overflowY="hidden" {...rest}>
       <Helmet>
-        <title>{title || "Pekin the Chef"}</title>
+        <title>{title}</title>
         <meta property="og:url" content={window.location.href} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content={imageUrl} />
