@@ -68,15 +68,20 @@ export const Home = () => {
   };
 
   return (
-    <Page overflowY="auto">
+    <Page
+      overflowY="auto"
+      title="Recipes from your favorite restaurants — Pekin the Chef"
+      description="Find recipes from your favorite restaurants and chefs."
+      imageUrl="https://pekinthechef.com/assets/recipe-wiki-hero-B4SGBMgJ.jpg"
+    >
       <Stack spacing={4} justify="center">
         <Stack spacing={2} direction="row" align="center">
           <Stack flex="2">
-            <Heading size="2xl" color="gray.700">
-              Dinner ideas from your favourite restaurants
+            <Heading as="h1" size="2xl" color="gray.700">
+              Dinner ideas from your favorite restaurants
             </Heading>
-            <Heading size="md" color="gray.500">
-              Find recipes from your favourite restaurants and chefs.
+            <Heading as="h2" size="md" color="gray.500">
+              Find recipes from your favorite restaurants and chefs.
             </Heading>
           </Stack>
           <AspectRatio ratio={1} flex="1">
