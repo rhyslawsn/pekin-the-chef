@@ -23,6 +23,9 @@ model User {
 
   isAdmin Boolean @default(false)
 
+  city    String?
+  country String?
+
   recipes Recipe[]
 
   @@map("users")
@@ -39,6 +42,8 @@ model Recipe {
   directions  String[]
   imageUrls   String[]
 
+  categories String[]
+
   slug String?
 
   price Int? // in cents
@@ -48,4 +53,13 @@ model Recipe {
 
   @@unique([slug, authorId])
   @@map("recipes")
+}
+
+enum RecipeCategory {
+  BREAKFAST
+  LUNCH
+  DINNER
+  DESSERT
+  SNACK
+  DRINK
 }
