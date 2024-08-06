@@ -20,5 +20,6 @@ public/dist
 /public
 
 # Ignore the data files
-./apps/api/partial-recpies.json
-./apps/api/places.csv
+/apps/api/partial-recipes.json
+/apps/api/places.csv
+/apps/api/recipe-wiki-424823-ea961f67d429.json

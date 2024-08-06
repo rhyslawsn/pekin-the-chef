@@ -113,7 +113,6 @@ const fetchDataFromGoogleMaps = async (url: string, keywords: string[]) => {
 
 // Usage
 const url = "https://maps.googleapis.com/maps/api/place/textsearch/json";
-const keywords = ["restaurants", "Victoria, BC"];
+const keywords = ["restaurants", "Vancouver, BC"];
 
 fetchDataFromGoogleMaps(url, keywords);
-// fetchMenuUrls("https://www.earls.ca/");

@@ -5,7 +5,7 @@ import { convertToUsername } from "./update-usernames";
 
 config();
 
-const FIRST_NAME = "Earls Kitchen + Bar - Victoria";
+const FIRST_NAME = "Flying Pig Vancouver";
 const LAST_NAME = "";
 
 const createAuthor = async () => {
