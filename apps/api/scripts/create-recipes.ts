@@ -1,5 +1,5 @@
 import { readFileSync } from "fs";
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, RecipeCategory } from "@prisma/client";
 import { config } from "dotenv";
 import { convertToSlug } from "./update-recipe-slugs";
 import OpenAI from "openai";
@@ -118,6 +118,7 @@ const main = async () => {
           ingredients,
           directions,
           slug,
+          categories: [RecipeCategory.DINNER],
           price: inCents(recipe.price),
           author: { connect: { id: AUTHOR_ID } },
         },

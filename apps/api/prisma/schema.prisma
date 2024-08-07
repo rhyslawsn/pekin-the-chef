@@ -42,7 +42,7 @@ model Recipe {
   directions  String[]
   imageUrls   String[]
 
-  categories String[]
+  categories RecipeCategory[]
 
   slug String?
 
